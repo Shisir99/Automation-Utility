@@ -49,7 +49,7 @@ def har2postman(har,prerequest_script,dic2):
     postman_collection = {
         "info": {
             "_postman_id": str(uuid.uuid4()),
-            "name": f"collection_complex {hour_min}",
+            "name": f"collection{hour_min}",
             "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
             "_exporter_id": "15974284"
         },
@@ -400,7 +400,7 @@ with open('./har/solution_creation_execution_complex.har', 'r') as f:
 har = json.loads(filter_har(har_parser))
 collection_data = har2postman(har,script,dic2)
 
-output_file = "collection_complex"+hour_min+".json"
+output_file = "collection"+hour_min+".json"
 with open(f'./collection/{output_file}', 'w') as f:
     json.dump(collection_data, f)
 
