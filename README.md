@@ -17,10 +17,10 @@ sol_details = [  { "HAR GSI 1804": { "Testing HAR CU1 1804": { "Testing HAR Enti
 1). Install the required dependencies by running the following command:
 
 ```sh
-python har2postman.py
+pip3 install -r requirements.txt
 ```
 
-2). Provide the HAR file containing the API calls and their steps to create a solution.
+2). Provide the path to HAR file containing the API calls and their steps to create a solution in the code.
 
 3). Provide the solution details in the "sol_details" format as mentioned above, in line 393 of the har2postman.py file.
 
