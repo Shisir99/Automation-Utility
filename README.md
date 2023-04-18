@@ -10,14 +10,7 @@ The user needs to provide the HAR file, which should contain all the necessary A
 
 ## Example of sol_details
 ```python
-sol_details = [    {        "HAR GSI 1804": {            "Testing HAR CU1 1804": {                "Testing HAR Entity1": ["name", "place"],
-            },
-            "Testing HAR CU2 1804": {
-                "Testing HAR Entity1": ["name", "place"],
-            },
-        },
-    },
-]
+sol_details = [  { "HAR GSI 1804": { "Testing HAR CU1 1804": { "Testing HAR Entity1": ["name", "place"] } "Testing HAR CU2 1804": { "Testing HAR Entity1":     ["name", "place"]} } } ]
 ```
 
 ## Usage
