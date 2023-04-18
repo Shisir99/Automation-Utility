@@ -241,14 +241,15 @@ def har2postman(har,prerequest_script,dic2):
         for key in global_dict.keys():
             for i in global_dict[key]:
                 dynamic_attribute = i
-                if dynamic_attribute not  in global_set:
+                if "updatedAt" in dynamic_attribute:
+                    print(f"dynamic_attribute is ----> {dynamic_attribute}")
+                if dynamic_attribute not in global_set:
                     global_set.add(dynamic_attribute)
                     position = dynamic_dic[key][1]
                     path = dynamic_dic[key][2]
                     str_path=construct_string(path)
-
-                postman_collection['item'][0]['item'][position]['event'][1]['script']['exec'].append(f"pm.variables.set('{dynamic_attribute}',pm.response.json().{str_path});\r")
-    print(f"dynamic_dict is----> {dynamic_dic}")
+                    postman_collection['item'][0]['item'][position]['event'][1]['script']['exec'].append(f"pm.variables.set('{dynamic_attribute}',pm.response.json().{str_path});\r")
+    #print(f"dynamic_dict is----> {dynamic_dic}")
     return postman_collection
 
 def construct_string(lst):
@@ -333,6 +334,8 @@ def check_dynamic(dynamic_dic,global_dict,dic2,dynamic_count,body_data,i):
                         dynamic_count = dynamic_count +1
                         modified_dict[key]= "{{"+f"{key}{len(global_dict[value])}"+"}}"
                     else:
+                        global_dict[value].append(f"{value}{len(global_dict[value])}")
+                        dynamic_count = dynamic_count +1
                         modified_dict[key]="{{"+f"{key}{len(global_dict[value])}"+"}}"
                         
     return modified_dict,dynamic_count,global_dict
