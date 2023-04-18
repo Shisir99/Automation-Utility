@@ -18,12 +18,14 @@ sol_details = [    {        "HAR GSI 1804": {            "Testing HAR CU1 1804":
         },
     },
 ]
+```
 
 ## Usage
 1). Install the required dependencies by running the following command:
 
 ```sh
 python har2postman.py
+```
 
 2). Provide the HAR file containing the API calls and their steps to create a solution.
 
@@ -32,6 +34,7 @@ python har2postman.py
 4). Run the script using the following command:
 ```python
 python har2postman.py
+```
 
 5). The script will generate a Postman collection JSON file that can be imported into Postman for API testing.
 
