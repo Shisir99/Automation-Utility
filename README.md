@@ -6,7 +6,7 @@ This Python script generates a Postman collection for API testing from a HAR (HT
 
 One of the key features of this script is its ability to automatically generate dynamic attributes in the request body of certain API calls. These dynamic attributes are extracted from the response body of previous API calls, making it easy to capture and use data from one API call to dynamically populate the request body of another API call.
 
-The user needs to provide the HAR file, which should contain all the necessary API calls and their corresponding steps to create a solution. Additionally, the user must provide solution details in a specific format, referred to as "sol_details," which includes the name of the GSI (Global Solution Identifier), CU's (Component Units), Entities, and their respective attributes. These details should be included in line 393 of the `har2postman.py` file.
+The user needs to provide the HAR file, which should contain all the necessary API calls and their corresponding steps to create a solution. Additionally, the user must provide solution details in a specific format, referred to as "sol_details," which includes the name of the GSI, CU's, Entities, and their respective attributes. These details should be included in line 393 of the `har2postman.py` file.
 
 ## Example of sol_details
 ```python
